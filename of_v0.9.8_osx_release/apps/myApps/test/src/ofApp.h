@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 
+#include "ball.h"
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -20,7 +22,6 @@ class ofApp : public ofBaseApp{
         void gotMessage(ofMessage msg);
     
     
-        float xPos;
-        float yPos;
+        Ball theBall;
 		
 };
