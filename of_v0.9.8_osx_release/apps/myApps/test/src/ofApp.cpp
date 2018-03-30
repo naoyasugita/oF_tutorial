@@ -5,20 +5,35 @@
 void ofApp::setup(){
     
     ofEnableSmoothing();
+    ofBackground(0, 0, 0);
     ofSetFrameRate(30);
+    ofSetWindowTitle("test");
+    
+    ofNoFill();
+    myBall = new Ball*[nBalls];
+    for ( int i = 0; i < nBalls; i++){
+        float x = 20 + (100 * i);
+        float y = 20 + (100 * i);
+        int dim = 10 + (10 * i);
+        
+        myBall[i] = new Ball(x, y, dim);
+        
+    }
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    theBall.moveTo(mouseX, mouseY);
+    for ( int i = 0; i < nBalls; i++){
+        myBall[i] -> update();
+    }
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
-    ofBackgroundGradient(ofColor::gray,ofColor(30,10,30), OF_GRADIENT_CIRCULAR);
-    theBall.draw();
+    for ( int i = 0; i < nBalls; i ++){
+        myBall[i] -> draw();
+    }
     
 }
 

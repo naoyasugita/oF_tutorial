@@ -13,14 +13,22 @@
 
 class Ball{
     
-    public:
-        Ball();
+public:
     
-        void moveTo(int _xDestiny, int _yDestiny );
-        void draw();
-        int x;
-        int y;
-        ofColor color;
+    void update();
+    void draw();
+    
+    float x;
+    float y;
+    int baseSpeed;
+    float speedX;
+    float speedY;
+    int dim;
+    Ball(float x, float y, int dim);
+    
+private:
+    Ball *myBall;
+    int nBalls;
     
 };
 

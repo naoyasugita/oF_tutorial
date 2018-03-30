@@ -8,22 +8,24 @@
 
 #include "ball.h"
 
-Ball::Ball(){
-    color.set(ofRandom(255), ofRandom(255), ofRandom(255));
+Ball::Ball(float _x, float _y, int _dim){
     
-    x = ofRandom(ofGetWindowWidth());
-    y = ofRandom(ofGetWindowHeight());
+    x = _x;
+    y = _y;
+    dim = _dim;
+    baseSpeed = 15;
+    speedX = ofRandom(-baseSpeed, baseSpeed);
+    speedY = ofRandom(-baseSpeed, baseSpeed);
     
+
 }
 
-void Ball::moveTo(int _xDestiny, int _yDestiny){
-    x += ( _xDestiny - x ) * 0.1;
-    y += ( _yDestiny - y ) * 0.1;
-    
+void Ball::update(){
+
 }
 
 void Ball::draw(){
-    ofSetColor(color);
-    ofFill();
-    ofCircle(x, y, 30);
+    ofSetColor(120, 120, 120);
+    ofCircle(x, y, dim);
+    
 }
